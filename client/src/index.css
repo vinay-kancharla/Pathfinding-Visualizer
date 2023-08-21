@@ -1,0 +1,169 @@
+body {
+	margin: 0;
+	background-color: rgba(51, 51, 51, 1);
+}
+
+h1 {
+	color: white;
+}
+
+ul {
+	padding: center;
+	margin: center;
+	list-style: none;
+}
+
+.header-container {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(65, 105, 225, 1);
+	padding: 10px 20px;
+	margin-bottom: 30px;
+	color: white;
+}
+
+.grid-container {
+	width: 1525px;
+	display: grid;
+	grid-template-columns: repeat(61, 25px);
+	grid-template-rows: repeat(27, 25px);
+	border: 1px solid rgba(70, 130, 180, 1);
+	margin: auto;
+}
+
+.node {
+	height: 25px;
+	width: 25px;
+	border: 1px solid rgba(70, 130, 180, 0.75);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	color: white;
+}
+
+.node-start {
+	background-color: green;
+}
+
+.node-finish {
+	background-color: red;
+}
+
+.node-wall {
+	background-color: rgba(0, 31, 63, 0.9);
+	border: 1px solid rgba(0, 31, 63, 0);
+}
+
+.node-visited {
+	animation-name: visitedAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-delay: 0;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+.node-path {
+	animation-name: pathAnimation;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-delay: 0;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+@keyframes wallAnimation {
+	0% {
+		transform: scale(0.3);
+		background-color: rgb(12, 53, 71);
+	}
+	50% {
+		transform: scale(1.2);
+		background-color: rgb(12, 53, 71);
+	}
+	100% {
+		transform: scale(1);
+		background-color: rgb(12, 53, 71);
+	}
+}
+
+@keyframes visitedAnimation {
+	0% {
+		transform: scale(0.3);
+		background-color: rgba(0, 0, 66, 0.5);
+		border-radius: 100%;
+	}
+	50% {
+		transform: scale(1.2);
+		background-color: rgba(118, 166, 238, 0.75);
+	}
+	100% {
+		transform: scale(1);
+		background-color: rgba(65, 105, 225, 0.75);
+	}
+}
+
+@keyframes pathAnimation {
+	0% {
+		transform: scale(0.3);
+		background-color: rgba(0, 217, 159, 0.75);
+	}
+	50% {
+		transform: scale(1.2);
+		background-color: rgba(0, 217, 159, 0.75);
+	}
+	100% {
+		transform: scale(1);
+		background-color: rgba(0, 217, 159, 0.75);
+		border: 1px solid rgba(0, 217, 159, 0.75);
+	}
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+button {
+	background-color: rgba(65, 105, 225, 1);
+	color: white;
+	min-width: 100px;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: rgba(65, 105, 225, 1);
+	min-width: 180px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content button {
+	min-width: 180px;
+	padding: 12px 16px;
+}
+
+button:hover {
+	background-color: rgba(45, 85, 195, 1);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropdown-button {
+	background-color: rgba(45, 85, 195, 1);
+}
