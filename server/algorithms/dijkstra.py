@@ -16,7 +16,6 @@ def dijkstras(grid, start_node):
         for j in range(len(grid[0])):
             if not grid[i][j]["isStart"] and not grid[i][j]["isWall"]:
                 distance[(i, j)] = float("inf")
-
                 heapq.heappush(min_heap, (distance[(i, j)], count, (i, j)))
     distance[(start_node["row"], start_node["col"])] = 0
     heapq.heappush(
